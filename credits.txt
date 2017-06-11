@@ -1,0 +1,9 @@
+https://launchpad.net/~russianneuromancer/+archive/ubuntu/drivers
+
+https://gist.github.com/mildmojo/48e9025070a2ba40795c
+
+http://www.linuxium.com.au/
+
+https://github.com/JoseExposito/touchegg
+
+https://github.com/plbossart/UCM

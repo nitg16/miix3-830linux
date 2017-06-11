@@ -1,0 +1,48 @@
+-- Step 0 ---
+
+# Download zip file from the link below and store it on some external media.
+
+https://github.com/nitg16/miix3-830linux/archive/master.zip
+
+-- Step 1 ---
+
+# Download Ubuntu 17.04 (or derivate) 64bit iso. Create a live usb.
+
+# Extract the downloaded zip file.
+
+# Copy bootia32.efi to /EFI/BOOT/ folder in live usb.
+
+# Copy grub-efi-ia32 and grub-efi-ia32-bin to /pool/main/g/grub2 folder in live usb.
+
+# Edit grub.cfg in /boot/grub/ folder in liveusb and add following commands at the top:
+
+set timeout=10
+set default=0
+
+# Save the file and exit.
+
+--- Step 2 ---
+
+# Boot into Ubuntu live usb.
+
+# Run the command below to kill thermald. Fixes freeze during installation.
+
+sudo pkill thermald
+
+# Connect to internet using ethernet, usb wifi adapter or any other means (If possible).
+
+# Without Internet connection, the installer can fail and abort the entire installation. This is because grub-efi-ia32 and grub-efi-ia32-bin packages are not shipped by default on Ubuntu iso and an internet connection is required to download them. We have already added these packages to the live usb in Step 1 to ensure error free installation. However, the installation can still fail without internet connection.
+
+--- Step 3 ---
+
+# Once installation is finished, reboot.
+
+# Immediately run autoconfig.sh and follow on screen instructions.
+
+--- Step 4 ---
+
+# Follow steps in manualconfig.txt.
+
+--- Step 5 ---
+
+# If something is not working in the script, report bugs on github. 

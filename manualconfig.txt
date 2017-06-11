@@ -1,0 +1,29 @@
+Follow these steps after you have run autoconfig.sh, rebooted and got wifi working.
+
+# Edit the file /etc/default/grub and add the parameter at the GRUB_CMDLINE_LINUX line like this (if there already are other parameters there, leave them and just add yours at the end separated by a space):
+
+GRUB_CMDLINE_LINUX="intel_idle.max_cstate=1 tsc=reliable clocksource=tsc clocksource_failover=tsc"
+
+# Update grub
+
+sudo update-grub
+
+# Run command below and choose "prompt everytime". Choose no when you are asked for screen grab. This fixes onscreen keyboard's failure to enter password in root prompts.
+
+gksu-properties
+
+# Shameless plug: Install Tapioca. A utility I coded to enable right click on touch screen devices.
+
+https://github.com/nitg16/tapioca
+
+# Run command below. Required for rclick applet to work.
+
+sudo apt install xdotool
+
+# Sound
+
+Manaully select each hardware in sound settings and test each of them untill you get sound input and output working. If you get youtube playback issues, try different combinations.
+
+# (Optional) Run command below. Config already created while running autoconfig.sh. Enables two finger tap right click (doesn't work in libinput setups).
+
+sudo apt install touchegg
